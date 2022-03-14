@@ -11,13 +11,16 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title> Quasar App </q-toolbar-title>
 
         <div>
           Quasar v{{ $q.version }}
-          <q-btn flat icon="mdi-exit-to-app" :label="$t('actions.logout')" @click="logout"></q-btn>
+          <q-btn
+            flat
+            icon="mdi-exit-to-app"
+            :label="$t('actions.logout')"
+            @click="logout"
+          ></q-btn>
         </div>
       </q-toolbar>
     </q-header>
@@ -29,9 +32,7 @@
       content-class="bg-content"
     >
       <q-list>
-        <q-item-label header>
-          Essential Links
-        </q-item-label>
+        <q-item-label header> Essential Links </q-item-label>
         <essential-link
           v-for="link in essentialLinks"
           :key="link.title"
@@ -50,13 +51,17 @@
 <script lang="ts">
 import { storeToRefs } from 'pinia';
 import { defineAsyncComponent, defineComponent } from 'vue';
-import useMainLayoutStore from './main.store'
+import useMainLayoutStore from './main.store';
 
 export default defineComponent({
   name: 'MainLayout',
   components: {
-    EssentialLink: defineAsyncComponent(() => import('components/EssentialLink.vue')),
-    LocaleSwitch: defineAsyncComponent(() => import('components/locale/LocaleSwitch.vue'))
+    EssentialLink: defineAsyncComponent(
+      () => import('components/EssentialLink.vue')
+    ),
+    LocaleSwitch: defineAsyncComponent(
+      () => import('components/locale/LocaleSwitch.vue')
+    ),
   },
   setup() {
     const store = useMainLayoutStore();
@@ -65,7 +70,7 @@ export default defineComponent({
     return {
       ...state,
       essentialLinks: store.essentialLinks,
-      logout: store.logout.bind(store)
+      logout: store.logout.bind(store),
     };
   },
 });

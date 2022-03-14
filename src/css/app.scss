@@ -2,12 +2,12 @@
 body.body--dark {
   color: $grey-1;
   --q-primary: #26a69a;
-  --q-secondary: #027BE3;
-  --q-accent: #9C27B0;
-  --q-positive: #21BA45;
-  --q-negative: #C10015;
-  --q-info: #31CCEC;
-  --q-warning: #F2C037;
+  --q-secondary: #027be3;
+  --q-accent: #9c27b0;
+  --q-positive: #21ba45;
+  --q-negative: #c10015;
+  --q-info: #31ccec;
+  --q-warning: #f2c037;
   // custom colors
   --q-main: #{$grey-10};
   --q-content: #{$grey-9};
@@ -15,13 +15,13 @@ body.body--dark {
 }
 body.body--light {
   color: $grey-10;
-  --q-primary: #027BE3;
-  --q-secondary: #26A69A;
-  --q-accent: #9C27B0;
-  --q-positive: #21BA45;
-  --q-negative: #C10015;
-  --q-info: #31CCEC;
-  --q-warning: #F2C037;
+  --q-primary: #027be3;
+  --q-secondary: #26a69a;
+  --q-accent: #9c27b0;
+  --q-positive: #21ba45;
+  --q-negative: #c10015;
+  --q-info: #31ccec;
+  --q-warning: #f2c037;
   // custom colors
   --q-main: white;
   --q-content: #{$grey-2};

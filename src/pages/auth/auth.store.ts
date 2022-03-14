@@ -4,18 +4,18 @@ export const loginPageStoreName = 'loginPage';
 const useLoginPageStore = defineStore(loginPageStoreName, {
   state: () => ({
     loginUrl: '',
-    registerUrl: ''
+    registerUrl: '',
   }),
   actions: {
-    initialize (locale: string) {
+    initialize(locale: string) {
       this.loginUrl = this.$oidc.createLoginUrl({
-        locale
+        locale,
       });
       this.registerUrl = this.$oidc.createRegisterUrl({
-        locale
+        locale,
       });
-    }
-  }
+    },
+  },
 });
 
 export type LoginPageStore = ReturnType<typeof useLoginPageStore>;

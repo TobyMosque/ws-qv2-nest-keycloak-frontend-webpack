@@ -12,7 +12,7 @@ import { serverTokenKey } from 'src/boot/oidc-server';
 
 export default defineComponent({
   name: 'App',
-  setup () {
+  setup() {
     const quasar = useQuasar();
     const appStore = useAppStore();
     const authStore = useAuthStore();
@@ -20,9 +20,13 @@ export default defineComponent({
 
     if (process.env.CLIENT) {
       const appState = storeToRefs(appStore);
-      watch(() => quasar.dark.isActive, () => {
-        appState.dark.value = quasar.dark.isActive
-      }, { immediate: true });
+      watch(
+        () => quasar.dark.isActive,
+        () => {
+          appState.dark.value = quasar.dark.isActive;
+        },
+        { immediate: true }
+      );
       requestAnimationFrame(() => {
         quasar.dark.set('auto');
         const task = authStore.initialize();
@@ -31,8 +35,8 @@ export default defineComponent({
     } else {
       const authState = storeToRefs(authStore);
       authState.token.value = inject(serverTokenKey) || '';
-      log(authState.token.value)
+      log(authState.token.value);
     }
-  }
+  },
 });
 </script>

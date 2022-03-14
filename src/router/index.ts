@@ -20,14 +20,14 @@ import routes from './routes';
 
 declare module 'pinia' {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  interface PiniaCustomProperties  {
-    $router: Router
-    $route: Router['currentRoute']
+  interface PiniaCustomProperties {
+    $router: Router;
+    $route: Router['currentRoute'];
   }
 }
 
 export default route(function ({ store }) {
-  const pinia = store as Pinia
+  const pinia = store as Pinia;
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : process.env.VUE_ROUTER_MODE === 'history'
@@ -48,7 +48,7 @@ export default route(function ({ store }) {
 
   pinia.use(() => ({
     $router: Router,
-    $route: Router['currentRoute']
+    $route: Router['currentRoute'],
   }));
 
   return Router;
